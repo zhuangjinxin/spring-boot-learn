@@ -1,7 +1,11 @@
 #### spring-boot-sample-simple
 
 ##### 1.Banner
-在/src/main/resources/目录下的banner.jpg和banner.txt
+在`/src/main/resources/`目录下的`banner.jpg`和`banner.txt`
+加载顺序：
+1.`banner.gif``banner.jpg``banner.png`（按顺序加载，打印第一个，其他不打印）
+2.`banner.txt`（若有即打印）
+3.默认banner（Spring Boot）（没有以上自定义Banner打印默认）
 
 banner.jpg:
 ```
@@ -36,7 +40,7 @@ banner.jpg:
           .*:oo::::8::::@::::@o:o88&::*....  . *:::##:::#::::8&&o*.           
                                                                              
 ```
-注：JPG的图片在控制台(Console)中打印出来竟然是用符号拼接的！很好玩。
+> 注：JPG的图片在控制台(Console)中打印出来竟然是用符号拼接的！很好玩。
 
 banner.txt
 原文内容：
@@ -47,5 +51,5 @@ ${Ansi.GREEN} :: Sample application build with Spring Boot${spring-boot.formatte
 ```
  :: Sample application build with Spring Boot (v1.5.8.RELEASE) ::
 ```
-
-
+更多自定义Banner的设置，参见官方文档：
+`https://docs.spring.io/spring-boot/docs/1.3.8.RELEASE/reference/htmlsingle/#boot-features-banner`
