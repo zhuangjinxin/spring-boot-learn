@@ -30,8 +30,20 @@
 |TEXT_XML|TEXT_XML_VALUE|text/xml|
 
 ##### 2. RequestMapping
+`org.springframework.web.bind.annotation`
+
 * @GetMapping
 * @PostMapping
 * @PutMapping
 * @DeleteMapping
 * @PatchMapping
+
+RequestMapping的属性：
+* name
+* value 指定请求的实际地址，指定的地址可以是URI Template模式;
+* path
+* method 指定请求的method类型， GET、POST、PUT、DELETE等;
+* params 指定request中必须包含某些参数值是，才让该方法处理;
+* headers  指定request中必须包含某些指定的header值，才能让该方法处理请求;
+* consumes 指定处理请求的提交内容类型（Content-Type），例如application/json, text/html;
+* produces 指定返回的内容类型，仅当request请求头中的(Accept)类型中包含该指定类型才返回;
